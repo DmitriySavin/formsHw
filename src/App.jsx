@@ -37,7 +37,7 @@ export class App extends Component {
       return;
     }
     if (findContact) {
-      alert(` было найдено`);
+      alert(`${this.state.filter} было найдено`);
       return;
     } else
       this.setState(({ contacts, name, number }) => ({
