@@ -27,27 +27,35 @@ export class App extends Component {
   };
 
   addContacts = () => {
-    const { contacts, name, number } = this.state;
+  const { contacts, name, number } = this.state;
 
-    const findContact = contacts.find((contact) => {
-      return contact.name.toLowerCase() === name.toLowerCase();
-    });
+  if (name.trim() === "") {
+    return;
+  }
 
-    if (name === "" || number === "") {
-      return;
-    }
-    if (findContact) {
-      alert(`${this.state.filter} было найдено`);
-      return;
-    } else
-      this.setState(({ contacts, name, number }) => ({
-        contacts: [...contacts, { name, number, id: nanoid() }],
-        name: "",
-        number: "",
-      }));
+    console.log("INPUT:", name);
+console.log("CONTACTS:", contacts.map(c => c.name));
+    
+  const findContact = contacts.find(
+    contact => contact.name.toLowerCase() === name.trim().toLowerCase()
+  );
 
-    console.log(this.state.contacts);
-  };
+  if (findContact) {
+    alert(` ${name} is already in contacts.`);
+    return;
+  }
+
+  if (number.trim() === "") {
+    return;
+  }
+
+  this.setState(({ contacts }) => ({
+    contacts: [...contacts, { id: nanoid(), name, number }],
+    name: "",
+    number: "",
+  }));
+};
+
 
   filterContacts = (id) => {
     const { contacts } = this.state;
