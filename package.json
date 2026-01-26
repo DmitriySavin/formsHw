@@ -1,7 +1,7 @@
 {
   "name": "formshw",
   "private": true,
-  "homepage" :  "https://github.com/DmitriySavin/formsHw.git",
+  "homepage": "https://github.com/DmitriySavin/formsHw#readme",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy" : "npm run build" , 
-    "deploy" : "gh-pages -d dist" 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "nanoid": "^5.1.6",
@@ -39,6 +39,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DmitriySavin/formsHw/issues"
-  },
-  "homepage": "https://github.com/DmitriySavin/formsHw#readme"
+  }
 }
